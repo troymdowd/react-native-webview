@@ -17,6 +17,7 @@ import Downloads from './examples/Downloads';
 import Uploads from './examples/Uploads';
 import Injection from './examples/Injection';
 import LocalPageLoad from './examples/LocalPageLoad';
+import PostMessage from './examples/PostMessage';
 
 const TESTS = {
   Alerts: {
@@ -65,6 +66,14 @@ const TESTS = {
     description: 'Injection test',
     render() {
       return <Injection />;
+    },
+  },
+  PostMessage: {
+    title: 'PostMessage',
+    testId: 'postMessage',
+    description: 'Post Message test',
+    render() {
+      return <PostMessage />;
     },
   },
   PageLoad: {
@@ -132,6 +141,11 @@ export default class App extends Component<Props, State> {
             testID="testType_injection"
             title="Injection"
             onPress={() => this._changeTest('Injection')}
+          />
+          <Button
+            testID="testType_postMessage"
+            title="PostMessage"
+            onPress={() => this._changeTest('PostMessage')}
           />
           <Button
             testID="testType_pageLoad"
